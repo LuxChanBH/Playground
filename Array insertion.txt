@@ -1,0 +1,135 @@
+#include <iostream> 
+
+using namespace std; 
+
+  
+// Function to insert x in arr at position pos 
+
+int* insertX(int n, int arr[], 
+
+             int x, int pos) 
+{ 
+
+    int i; 
+
+  
+
+    // increase the size by 1 
+
+    n++; 
+
+  
+
+    // shift elements forward 
+
+    for (i = n; i >= pos; i--) 
+
+        arr[i] = arr[i - 1]; 
+
+  
+
+    // insert x at pos 
+
+    arr[pos - 1] = x; 
+
+  
+
+    return arr; 
+} 
+
+  
+// Driver Code 
+
+int main() 
+{ 
+
+    int i, x, pos, n = 10; 
+    std::cout<<"Enter the number of elements in the array \n";
+    std::cin>>n;
+    int arr[n];
+    std::cout<<"Enter the elements in the array \n";
+  
+
+    // initial array of size 10 
+
+    for (i = 0; i <n; i++) 
+
+        std::cin>>arr[i]; 
+   std::cout<<"Enter the location where you wish to insert an element \n";
+  std::cin>>pos;
+  if(pos>n)
+  {
+    std::cout<<"Invalid Input \n";
+    exit(0);
+  }
+  else
+  {
+   std::cout<<"Enter the value to insert \n";
+   std::cin>>x;
+
+  
+
+    // Insert x at pos 
+
+    insertX(n, arr, x, pos); 
+
+  
+
+    // print the updated array 
+   std::cout<<"Array after insertion is\n";
+
+    for (i = 0; i < n + 1; i++) 
+
+        cout << arr[i] << "\n"; 
+
+  }
+
+    return 0; 
+} 
+Array insertion
+Arun and Ram were playing cards. Arun has 5 cards. Ram wants to insert a new card in between Arun's cards. Ram wants to find the position to insert the card. So help him to find the position to insert a certain card. If Ram inserts a card in a position other than the position of 5 cards, the game will be over. So play carefully. EXAMPLE: For example, consider an array having three elements in it initially and a[0] = 1, a[1] = 2 and a[2] = 3 and you want to insert a number 45 at location 1 i.e. a[0] = 45, so we have to move elements one step below after insertion a[1] = 1 , and a[2] = 2 and a[3] = 3.
+Input & Output Format:
+
+Assume that the maximum number of elements in the array is 20.
+
+Sample Input:
+
+Enter the number of elements in the array
+
+5
+
+Enter the elements in the array
+
+1
+
+2
+
+3
+
+4
+
+5
+
+Enter the location where you wish to insert an element
+
+4
+
+Enter the value to insert
+
+10
+
+Sample Output:
+
+Array after insertion is
+
+1
+
+2
+
+3
+
+10
+
+4
+
+5
